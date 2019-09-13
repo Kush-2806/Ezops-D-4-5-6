@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  webapp1:
+    build: .
+    ports:
+      - 8080:8080
+    
+  mq:
+    image: ibmcom/mq
+    environment:
+      LICENSE: accept
+      MQ_QMGR_NAME: QM1
+    ports:
+      - "1414:1414"
+   
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - '46000:3306'
+    expose:
+      - '3306'
+    

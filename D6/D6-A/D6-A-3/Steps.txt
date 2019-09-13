@@ -1,0 +1,2 @@
+Docker-compose up
+You will see in the output that they change the network name to ezops_challenge_<dir name>

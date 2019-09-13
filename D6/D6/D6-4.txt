@@ -1,0 +1,4 @@
+1) docker run --rm -it -e MYSQL_ALLOW_EMPTY_PASSWORD=yes mysql
+2) Open another terminal:
+    docker exec -it <Mysql Container ID> bash
+    mysql -u root (To verify that you can connect to Mysql service inside the container)

@@ -1,0 +1,11 @@
+Requirements:
+python3 installed
+
+Steps:
+Make sure you have execute permissions on the script file
+
+Run:
+./kaggle.sh
+
+Output1.csv is the column order reversed
+output2.csv shows alternate columns.

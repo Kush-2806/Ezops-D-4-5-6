@@ -1,0 +1,4 @@
+DOCKER-COMPOSE Steps:
+
+1) docker-compose up
+2) Visit [Your Docker Machine IP]:8080/MyApp 

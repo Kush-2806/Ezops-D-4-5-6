@@ -1,0 +1,11 @@
+Docker-compose up
+
+(New Terminal)
+Docker ps
+
+docker exec -it <Mysql Container id> bash
+
+Open [Docker Machine IP]:8080 for Tomcat
+
+docker exec -it <Ibm MQ Container id> bash
+Run dspmqver to verify that MQ is running

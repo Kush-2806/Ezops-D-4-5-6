@@ -1,0 +1,5 @@
+Docker build -t webapp .
+
+docker run webapp
+
+You will see the output of commands pwd and ls and then the container will stop

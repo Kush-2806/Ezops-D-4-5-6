@@ -1,0 +1,3 @@
+Docker-compose up
+
+You will see the output of 'cat ezops.txt' right before the tomcat container starts.

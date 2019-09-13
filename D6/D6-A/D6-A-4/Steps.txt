@@ -1,0 +1,50 @@
+RUN THESE IN A DOCKER TERMINAL
+docker-machine create --driver virtualbox myvm1
+docker-machine create --driver virtualbox myvm2
+
+docker-machine ls (to get ip for the vm)
+
+docker-machine ssh myvm1 "docker swarm init --advertise-addr <myvm1 ip>"
+
+The cmd output should give you instructions to add a worker node to the swarm, since myvm1 is the manager.
+
+Use:
+docker-machine ssh myvm2 <Followed by the docker command in the terminal output to add a node>
+
+Run:
+docker node ls (to see available nodes in the swarm)
+
+docker-machine env myvm1
+get the command in the terminal output to configure your shell
+typically the last line in the terminal output to <docker-machine env myvm1>
+
+Run that command
+For eg: 
+@FOR /f "tokens=*" %i IN ('docker-machine env myvm1') DO @%i
+
+docker-machine ls to check that myvm1 is the active machine
+
+
+DEPLOYMENT:
+go to the dir where the docker-compose.yml is located.
+Exec:
+docker stack deploy -c docker-compose.yml <Swarm Cluster name>
+
+
+Check state by running:
+docker stack ps <Swarm Cluster name>
+
+
+Check containers run by different nodes in the swarm:
+
+docker node ls
+(Get the id of the node you want to check, for xample 5nx6fu9cfx0e)
+
+docker node ps <node id>
+eg: docker node ps 5nx
+
+docker service ls (to check all services and replicas)
+
+docker ps (to check containers run by the current node)
+docker exec -it <container it> bash (to get a bash into that container)
+
